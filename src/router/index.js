@@ -4,6 +4,7 @@ import login from '@/components/login'
 // import siderBar from '@/components/siderBar'
 import myCommission from '@/components/myCommission'
 import home from '@/components/home'
+import withdraw from '@/components/withdraw'
 
 Vue.use(Router)
 
@@ -17,8 +18,16 @@ export default new Router({
       component : home,
       children: [
         {
-          path : '/myCommission',
+          path : '',
           component :myCommission
+        },
+        {
+          path : 'myCommission',
+          component :myCommission
+        },
+        {
+          path : 'withdraw',
+          component : withdraw
         }
       ]
     },{

@@ -12,6 +12,14 @@
 <style>
   .home {
     height: 100%;
+    position: relative;
+  }
+  .home .home-default {
+    position: absolute;
+  }
+
+  .home .content {
+    margin-left: 15%;
   }
 </style>
 

@@ -20,9 +20,11 @@
             </el-submenu>
           </el-submenu>
           <el-menu-item index="2"><i class="el-icon-menu"></i>
-            <router-link to="myCommission">我的佣金</router-link>
+            <router-link to="/home/myCommission">我的佣金</router-link>
           </el-menu-item>
-          <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
+          <el-menu-item index="3"><i class="el-icon-setting"></i>
+            <router-link to="/home/withdraw">我的提现</router-link>
+          </el-menu-item>
         </el-menu>
       </el-col>
     </el-row>

@@ -22,7 +22,7 @@
       <el-form-item>
         <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
         <el-button @click="resetForm('ruleForm2')">重置</el-button>
-        <router-link to="myCommission">home</router-link>
+        <router-link to="home/myCommission">home</router-link>
       </el-form-item>
     </el-form>
   </div>
