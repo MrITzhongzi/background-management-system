@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import login from '@/components/login'
+// import siderBar from '@/components/siderBar'
+import myCommission from '@/components/myCommission'
+import home from '@/components/home'
 
 Vue.use(Router)
 
@@ -8,8 +11,20 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
-    }
+      component: login
+    },{
+      path : '/home',
+      component : home,
+      children: [
+        {
+          path : '/myCommission',
+          component :myCommission
+        }
+      ]
+    },{
+      path : '/login',
+      component: login
+    },
+
   ]
 })
