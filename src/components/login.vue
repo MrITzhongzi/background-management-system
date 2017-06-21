@@ -10,15 +10,12 @@
     </el-row>
     <!--表单验证-->
     <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="密码" prop="pass">
-        <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
-      </el-form-item>
       <el-form-item label="用户名" prop="username">
         <el-input type="text" v-model="ruleForm2.username" auto-complete="off"></el-input>
       </el-form-item>
-      <!--<el-form-item label="年龄" prop="age">
-        <el-input v-model.number="ruleForm2.age"></el-input>
-      </el-form-item>-->
+      <el-form-item label="密码" prop="pass">
+        <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
         <el-button @click="resetForm('ruleForm2')">重置</el-button>
@@ -40,8 +37,8 @@
         if (value === '') {
           callback(new Error('请输入密码'));
         } else {
-          if (this.ruleForm2.checkPass !== '') {
-            this.$refs.ruleForm2.validateField('checkPass');
+          if (this.ruleForm2.username !== '') {
+            this.$refs.ruleForm2.validateField('username');
           }
           callback();
         }
@@ -56,7 +53,7 @@
       return {
         ruleForm2: {
           pass: '',
-          checkPass: '',
+          username: '',
 //          age: ''
         },
         rules2: {
@@ -73,13 +70,18 @@
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-              alert(0)
-            this.$router.push('/home')
-            /*this.axios.get('/data/login.json').then((response) =>{
+            let requestLoginData = {}
+            axios.get('../../static/login.json').then((response) =>{
+                requestLoginData = response.data[0]
+              if(requestLoginData.username == this.ruleForm2.username && requestLoginData.password == this.ruleForm2.pass){
+                this.$router.push('/home')
+              }else {
+                  alert('err')
+              }
               console.log(response.data)
             }).catch(err=>{
                 console.log(err);
-            })*/
+            })
           } else {
             console.log('error submit!!');
             return false;
@@ -98,6 +100,7 @@
 <style scoped>
   .login {
     margin: 100px auto;
+    max-width: 600px;
   }
 
   .login .grid-content {
