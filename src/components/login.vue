@@ -31,7 +31,7 @@
 
   Vue.use(VueAxios, axios)
   export default {
-      name : 'login',
+    name: 'login',
     data() {
       var validatePass = (rule, value, callback) => {
         if (value === '') {
@@ -71,16 +71,16 @@
         this.$refs[formName].validate((valid) => {
           if (valid) {
             let requestLoginData = {}
-            axios.get('../../static/login.json').then((response) =>{
-                requestLoginData = response.data[0]
-              if(requestLoginData.username == this.ruleForm2.username && requestLoginData.password == this.ruleForm2.pass){
+            this.axios.get('../../static/login.json').then((response) => {
+              requestLoginData = response.data[0]
+              if (requestLoginData.username == this.ruleForm2.username && requestLoginData.password == this.ruleForm2.pass) {
                 this.$router.push('/home')
-              }else {
-                  alert('err')
+              } else {
+                this.open();
               }
               console.log(response.data)
-            }).catch(err=>{
-                console.log(err);
+            }).catch(err => {
+              console.log(err);
             })
           } else {
             console.log('error submit!!');
@@ -90,6 +90,11 @@
       },
       resetForm(formName) {
         this.$refs[formName].resetFields();
+      },
+      open() {
+        this.$alert('您输入的用户名或者密码错误', '爱心tip', {
+          confirmButtonText: '确定',
+        });
       }
     },
   }
