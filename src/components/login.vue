@@ -4,7 +4,7 @@
       <el-col :span="24">
         <div class="grid-content bg-purple-dark">
           <img src="../assets/drink-logo.png" alt="">
-          <h3>幸福小饮</h3>
+          <h3>幸福小</h3>
         </div>
       </el-col>
     </el-row>
@@ -74,7 +74,15 @@
             this.axios.get('../../static/login.json').then((response) => {
               requestLoginData = response.data[0]
               if (requestLoginData.username == this.ruleForm2.username && requestLoginData.password == this.ruleForm2.pass) {
+
+                localStorage.setItem('username-lhw', requestLoginData.username)
+                localStorage.setItem('password-lhw', requestLoginData.password)
+
                 this.$router.push('/home')
+                /* setTimeout(function () {
+
+                 },20000);*/
+
               } else {
                 this.open();
               }

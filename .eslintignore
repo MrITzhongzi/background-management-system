@@ -4,3 +4,5 @@ src/*.js
 src/*.vue
 src/components/*.vue
 src/router/*.js
+
+src/script/*.js

@@ -12,14 +12,22 @@
 <style>
   .home {
     height: 100%;
-    position: relative;
+    /*position: relative;*/
+    display: flex;
   }
+
   .home .home-default {
-    position: absolute;
+    width: 15%;
+    /*position: absolute;*/
   }
 
   .home .content {
-    margin-left: 15%;
+    flex-grow: 1;
+    padding: 40px;
+  }
+
+  .home .content .el-table__header-wrapper th {
+    text-align: center;
   }
 </style>
 
@@ -28,11 +36,9 @@
 
   export default {
     data() {
-      return {
-
-      }
+      return {}
     },
-    components:{
+    components: {
       siderBar
     }
   }
