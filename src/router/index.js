@@ -5,6 +5,7 @@ import login from '@/components/login'
 import myCommission from '@/components/myCommission'
 import home from '@/components/home'
 import withdraw from '@/components/withdraw'
+import richText from '@/components/richText'
 
 Vue.use(Router)
 
@@ -28,6 +29,9 @@ export default new Router({
         {
           path : 'withdraw',
           component : withdraw
+        },{
+          path : 'richText',
+          component : richText
         }
       ]
     },{
