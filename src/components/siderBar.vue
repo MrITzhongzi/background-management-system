@@ -52,6 +52,7 @@
   .home-default {
     width: 200px;
     height: 100%;
+    text-align: left;
   }
   .home-default > div {
     height: 100%;
@@ -72,7 +73,6 @@
     z-index: 2 ;
     top: 20px;
     left: 20px;
-    text-align: center;
     width: 100%;
     font-size: 16px;
   }

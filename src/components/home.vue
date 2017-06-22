@@ -17,7 +17,7 @@
   }
 
   .home .home-default {
-    width: 15%;
+    /*width: 15%;*/
     /*position: absolute;*/
   }
 
