@@ -37,6 +37,10 @@
               <el-menu-item index="1-4-1">选项1</el-menu-item>
             </el-submenu>
           </el-submenu>
+          <!--走马灯导航-->
+          <el-menu-item index="3"><i class="el-icon-date"></i>
+            <router-link to="/home/zouMaDeng">轮播图</router-link>
+          </el-menu-item>
         </el-menu>
       </el-col>
     </el-row>
@@ -46,7 +50,7 @@
 <style>
 
   .home-default {
-    width: 15%;
+    width: 200px;
     height: 100%;
   }
   .home-default > div {

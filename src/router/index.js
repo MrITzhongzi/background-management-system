@@ -9,6 +9,7 @@ import richText from '@/components/richText'
 import dynamic from '../components/Dynamic.vue'
 import dynamicTree from '../components/subDynamic-tree.vue'
 import dynamicTreeChoose from '../components/subDynamicChoose.vue'
+import zouMaDeng from '../components/zouMaDeng.vue'
 
 Vue.use(Router)
 
@@ -53,6 +54,9 @@ export default new Router({
               component : dynamicTreeChoose
             }
           ]
+        },{
+          path : 'zouMaDeng',
+          component : zouMaDeng
         }
       ]
     },{
