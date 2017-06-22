@@ -6,6 +6,9 @@ import myCommission from '@/components/myCommission'
 import home from '@/components/home'
 import withdraw from '@/components/withdraw'
 import richText from '@/components/richText'
+import dynamic from '../components/Dynamic.vue'
+import dynamicTree from '../components/subDynamic-tree.vue'
+import dynamicTreeChoose from '../components/subDynamicChoose.vue'
 
 Vue.use(Router)
 
@@ -32,12 +35,29 @@ export default new Router({
         },{
           path : 'richText',
           component : richText
+        },{
+          path : 'dynamic',
+          component : dynamic,
+          children : [
+            {
+              path : "",
+              redirect : {name : "deafult-dynamic"}
+            },
+            {
+              path : "dynamicTree",
+              name : 'deafult-dynamic',
+              component : dynamicTree
+            },
+            {
+              path : 'dynamicChooseTree',
+              component : dynamicTreeChoose
+            }
+          ]
         }
       ]
     },{
       path : '/login',
       component: login
-    },
-
+    }
   ]
 })
