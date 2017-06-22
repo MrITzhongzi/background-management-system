@@ -8,6 +8,9 @@ import router from './router'
 
 import './style/commom.css'
 
+/*添加一个全局组件*/
+import './components/globalComponents/globalComponents.js'
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 

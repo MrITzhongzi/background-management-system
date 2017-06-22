@@ -3,6 +3,9 @@ config/*.js
 src/*.js
 src/*.vue
 src/components/*.vue
+src/components/globalComponents/*.js
 src/router/*.js
 
 src/script/*.js
+
+
