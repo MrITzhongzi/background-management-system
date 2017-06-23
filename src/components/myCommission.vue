@@ -1,5 +1,10 @@
 <template>
   <div class="myCommmission">
+    <div style="margin-top: 15px;">
+      <el-input placeholder="请输入内容" v-model="input5">
+        <el-button slot="append" icon="search"></el-button>
+      </el-input>
+    </div>
     <div class="commissionTitle">
       <p>
         <span>总金额：<animated-integer v-bind:value="totalNumMoney"></animated-integer>
@@ -33,6 +38,12 @@
         label="变动后已提现">
       </el-table-column>
     </el-table>
+    <div class="block footPage">
+      <el-pagination
+        layout="prev, pager, next"
+        :total="50">
+      </el-pagination>
+    </div>
   </div>
 </template>
 
@@ -80,6 +91,10 @@
 
   .el-table .el-table__body tbody td {
     flex-grow: 1;
+  }
+
+  .footPage {
+    margin-top: 20px;
   }
 </style>
 
